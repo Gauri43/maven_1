@@ -25,6 +25,13 @@ stage('Build') {
             }
     
  }
+
+stage ('Test')
+{
+step{
+        bat 'mvn test'
+}
+}
 }
 
 }
