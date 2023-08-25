@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone Repository') {
+            steps {
+                script {
+                    // Clone the repository
+                    def gitCredentials = 'Gauri'  // ID of your Git credentials in Jenkins
+                    def repositoryURL = 'https://github.com/Gauri43/maven_1.git'
+                    def branchName = 'main'  // Replace with the branch you want to clone
+
+                    checkout([$class: 'GitSCM',
+                              branches: [[name: "refs/heads/${branchName}"]],
+                              userRemoteConfigs: [[
+                                  url: repositoryURL,
+                                  credentialsId: gitCredentials
+                              ]]])
+                }
+            }
+        }
+    }
+}
+
