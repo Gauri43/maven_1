@@ -1,8 +1,9 @@
 pipeline {
     agent any
-environment {
+    environment {
         TOMCAT_HOME = C:/Program Files/Apache Software Foundation/Tomcat 10.1 // Update with your Tomcat directory
-    }
+        }
+
     stages {
         stage('Clone Repository') {
             steps {
