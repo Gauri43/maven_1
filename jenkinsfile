@@ -1,4 +1,4 @@
-pipeline {
+spipeline {
     agent any
 
     stages {
@@ -26,12 +26,12 @@ stage('Build') {
     
  }
 
-stage ('Test')
-{
-step{
-        bat 'mvn test'
-}
-}
+stage('Test')
+    {
+    steps {
+            bat 'mvn test'
+        }
+    }
 }
 
 }
