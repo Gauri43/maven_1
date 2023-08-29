@@ -28,8 +28,7 @@ stage('Build') {
             }
         post {
                 success {
-                        bat "Archiving the artifact"
-                        archiveArtifact artifact: "**/*.war"
+                       archiveArtifacts artifacts: '**/target/*.jar', allowEmptyArchive: true
                 }
             }
     
