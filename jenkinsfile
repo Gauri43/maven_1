@@ -39,9 +39,9 @@ stage('Build') {
 
 stage('deploy'){
             steps{
-               copy "%JAR_FILE%" "%TOMCAT_HOME%\springcore"
+               copy "%JAR_FILE%" "%TOMCAT_HOME%\\springcore"
 
-                call "%TOMCAT_HOME%\bin\startup.bat"
+                call "%TOMCAT_HOME%\\bin\\startup.bat"
             }
 }
 
