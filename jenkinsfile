@@ -41,7 +41,7 @@ pipeline {
             steps {
                copy "%JAR_FILE%" "%TOMCAT_HOME%\\springcore"
 
-                call "%TOMCAT_HOME%\\bin\\startup.bat"
+                call "%TOMCAT_HOME%\\bin\\startup.sh"
             }
 }
 
