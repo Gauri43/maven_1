@@ -2,7 +2,9 @@ pipeline {
     agent any
     environment {
         TOMCAT_HOME = 'C:\\Program Files\\Apache Software Foundation\\Tomcat 10.1 '// Update with your Tomcat directory
-        }
+        JAR_FILE='C:\Users\Gauri Kate\Downloads\springcore-0.0.1-SNAPSHOT.jar'
+
+}
 
     stages {
         stage('Clone Repository') {
@@ -33,6 +35,14 @@ stage('Build') {
             }
     
  }
+}
+
+stage('deploy'){
+            steps{
+               copy "%JAR_FILE%" "%TOMCAT_HOME%\springcore"
+
+                call "%TOMCAT_HOME%\bin\startup.bat"
+            }
 }
 
 }
