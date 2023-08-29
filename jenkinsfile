@@ -33,19 +33,6 @@ stage('Build') {
             }
     
  }
-stage('Deploy to Tomcat') {
-            steps {
-                // Remove the existing application in Tomcat webapps directory
-                bat "${TOMCAT_HOME}\\bin\\shutdown.bat"
-                bat "rm -rf ${TOMCAT_HOME}/webapps/maven_1"
-                
-                // Copy the newly built WAR file to Tomcat webapps directory
-                bat "cp target/maven_1.war ${TOMCAT_HOME}/webapps/"
-                
-                // Start Tomcat
-                bat "${TOMCAT_HOME}\\bin\\startup.bat"
-            }
-        }
 }
 
 }
