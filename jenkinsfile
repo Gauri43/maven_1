@@ -24,18 +24,16 @@ pipeline {
 }
 stage('Build') {
             steps {
-                bat 'mvn clean install'
+                bat 'mvn clean package'
+            }
+        post {
+                success {
+                        bat "Archiving the artifact"
+                        archiveArtifact artifact: "**/*.war"
+                }
             }
     
  }
-
-stage('Test')
-    {
-    steps {
-            bat 'mvn test'
-        }
-    }
-
 stage('Deploy to Tomcat') {
             steps {
                 // Remove the existing application in Tomcat webapps directory
