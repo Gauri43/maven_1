@@ -40,7 +40,7 @@ pipeline {
     stage('Deploy') {
             steps {
 
-              bat "${TOMCAT_HOME}\\bin\\shutdown.bat"
+              bat "${TOMCAT_HOME}\\bin\\shutdown.sh"
               bat "copy %JAR_FILE%" "%TOMCAT_HOME%\\springcore"
 
                 bat "call %TOMCAT_HOME%\\bin\\startup.sh"
