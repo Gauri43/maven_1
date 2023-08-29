@@ -37,7 +37,7 @@ pipeline {
  }
 }
 
-        stage('Deploy') {
+    stage('Deploy') {
             steps {
 
               bat "${TOMCAT_HOME}\\bin\\shutdown.bat"
@@ -45,7 +45,5 @@ pipeline {
 
                 bat "call %TOMCAT_HOME%\\bin\\startup.sh"
             }
-}
-
-
+        }
 }
