@@ -24,7 +24,7 @@ pipeline {
                 }
             }
 }
-stages ('Build') {
+stage ('Build') {
             steps {
                 bat 'mvn clean package'
             }
@@ -37,7 +37,7 @@ stages ('Build') {
  }
 }
 
-stages ('deploy'){
+stage ('Deploy'){
             steps{
                copy "%JAR_FILE%" "%TOMCAT_HOME%\\springcore"
 
