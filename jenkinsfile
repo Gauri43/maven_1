@@ -38,7 +38,7 @@ pipeline {
 }
 
         stage('Deploy') {
-            steps{
+            steps {
                copy "%JAR_FILE%" "%TOMCAT_HOME%\\springcore"
 
                 call "%TOMCAT_HOME%\\bin\\startup.bat"
